@@ -12,16 +12,8 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-const ul = document.querySelector("#gallery");
-  
-  const createListItem = ({ url, alt }) => {
-    return `
-      <li class="gallery-item">
-        <img src="${url}" alt="${alt}" class="gallery-image">
-      </li>
-    `;
-  };
-  
-  const galleryItems = images.map((image) => createListItem(image));
-  
-  ul.insertAdjacentHTML("beforeend", galleryItems.join(""));
+const galeryListEl = document.querySelector('ul');
+const imageList = images.map(function ({url, alt}) {
+  return `<li><img src ='${url}' ${alt} width = "320" </li>`;
+}).join('');
+galeryListEl.insertAdjacentHTML('beforeend', imageList);
